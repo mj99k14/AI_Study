@@ -1,6 +1,6 @@
-import numpy as np
+import numpy as np  # 숫자 계산 배열 다룸
 import random
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt  #데이터를 그래프로 그려줌
 
 # Data set
 # input
