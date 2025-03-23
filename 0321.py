@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt  #데이터를 그래프로 그려줌
 # input
 # input data, features
 # H(x) -> input data : x1 -> xn
-x_train = [ np.random.rand() * 10 for _ in range(50)]
-y_train = [val + np.random.rand() * 5 for val in x_train]
+x_train = [ np.random.rand() * 10 for _ in range(50)] #랜덤으로 50 개 
+y_train = [val + np.random.rand() * 5 for val in x_train] #numpy 
 
 
 # BGC (Batch Gradient Descent) 배치경사하강법을 
