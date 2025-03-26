@@ -1,5 +1,5 @@
 # 경사하강법 예제
-# 0319 파일 오류 나서 삭제했어
+
 import matplotlib.pyplot as plt
 
 x = [1, 2, 3, 4]
@@ -11,7 +11,7 @@ loss = 0.0
 learning_rate = 0.01
 avg = []
 epoch = 100
-# w ------------> ?
+# w ------------> ? 
 # 30 epoch
 for _ in range(epoch):
     slope_sum = 0
