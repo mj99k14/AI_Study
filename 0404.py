@@ -3,9 +3,6 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import SGDRegressor
 from sklearn.metrics import mean_squared_error
 
-
-
-
 np.random.seed(0)
 x = np.random.rand(3, 1) * 10
 y = 2.5 *  x + np.random.rand(3, 1) * 2
@@ -17,7 +14,8 @@ y = y.ravel()
 # print(bar.ravel())
 
 
-model = SGDRegressor(max_iter = 1000,
+model = SGDRegressor(
+                     max_iter = 1000,
                      learning_rate ='constant',
                      eta0 = 0.01,
                      penalty = None,
@@ -27,6 +25,10 @@ model = SGDRegressor(max_iter = 1000,
 
 #학습 실시
 model.fit(x,y)
+#평가
+#loss 값 확인 / cost function확인
+y_pred = model.predict(x)
+mse = mean_squared_error(y, y_pred)
 
 
 # import numpy as np
