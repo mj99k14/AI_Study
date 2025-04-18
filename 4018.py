@@ -35,7 +35,6 @@ w = np.random.rand(num_features,1)
 b = np.random.rand()
 learn_rate = 0.01
 
-
 gradient = np.zeros(num_features)
 #예측 값 
 for _ in range(1000): 
@@ -49,6 +48,7 @@ for _ in range(1000):
 
     w = w - learn_rate * gradient_w
     b = b - learn_rate * gradient_b
+
 print(f"{w_true},{b_true}")
 print("---" *10)
 print(f"{w},{b}")
