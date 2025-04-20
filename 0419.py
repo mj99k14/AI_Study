@@ -35,7 +35,7 @@ for epoch in range(epochs):
 
 
 print("\n학습된 가중치",w)
-print("학습된 편향")
+print("학습된 편향",b)
 
 
     
