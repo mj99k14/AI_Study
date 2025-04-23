@@ -21,6 +21,7 @@ for f, y_ in zip(samples, y):
     # b의 기울기
     gradient_b += error
     
+    #이부분 시험에나옴 다시한번 복습습
     
 w = w - gradient_w / len(samples)
 b = b - gradient_b / len(samples)
