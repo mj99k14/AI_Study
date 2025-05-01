@@ -24,7 +24,7 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-# 4. SGDRegressor 모델 정의 및 학습 / 여기서 문제 생길거임 바꾸셈
+# 4. SGDRegressor 모델 정의 및 학습 / 변경 완 (학습률(eta0)과 학습률 스케줄(learning_rate)을 바꾸고, 정규화(penalty)와 수렴 조건(tol)을 조정해서 모델이 더 잘 학습되고 과적합도 막도록 바꾼 거야.)
 model = SGDRegressor(
     max_iter=1000,
     tol=1e-4,  # 더 정밀한 수렴 기준
