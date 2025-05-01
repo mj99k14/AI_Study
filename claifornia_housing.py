@@ -27,12 +27,13 @@ X_test_scaled = scaler.transform(X_test)
 # 4. SGDRegressor 모델 정의 및 학습 / 여기서 문제 생길거임 바꾸셈
 model = SGDRegressor(
     max_iter=1000,
-    tol=0.01,
-    eta0=0.001,
-    learning_rate='constant',
-    penalty=None,
+    tol=1e-4,  # 더 정밀한 수렴 기준
+    eta0=0.01,  # 약간 더 높은 학습률
+    learning_rate='invscaling',  # 학습률 점점 감소
+    penalty='l2',  # 기본 L2 정규화
     random_state=42
 )
+
 model.fit(X_train_scaled, y_train)
 
 # 5. 예측 및 평가
