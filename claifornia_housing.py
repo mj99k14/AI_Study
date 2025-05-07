@@ -26,12 +26,12 @@ X_test_scaled = scaler.transform(X_test)
 
 # 4. SGDRegressor 모델 정의 및 학습 / 변경 완 (학습률(eta0)과 학습률 스케줄(learning_rate)을 바꾸고, 정규화(penalty)와 수렴 조건(tol)을 조정해서 모델이 더 잘 학습되고 과적합도 막도록 바꾼 거야.)
 model = SGDRegressor(
-    max_iter=1000,
+    max_iter=1000, #EPOCH수
     tol=1e-4,  # 더 정밀한 수렴 기준
     eta0=0.01,  # 약간 더 높은 학습률
     learning_rate='invscaling',  # 학습률 점점 감소
     penalty='l2',  # 기본 L2 정규화
-    random_state=42
+    random_state=42 #랜덤 시드 고정(결과 재현 가능하게 함 )
 )
 
 model.fit(X_train_scaled, y_train)
