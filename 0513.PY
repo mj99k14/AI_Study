@@ -45,9 +45,10 @@ error = prediction - y_train
 gradient_W = X_train @ error / len(X_train)
 gradient_b = error.mean()
 
-#updata parameters:w , b
+#updata parameters:w , b 업데이트 해줌줌
 w = w -learning_rate * gradient_W
 b = b - learning_rate * gradient_b
+
 
 #calculate loss
 loss = -np.mean(y_train*np.log(prediction) +  (1 - y)*np.log(1 - prediction))
