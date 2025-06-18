@@ -1,7 +1,7 @@
 from sklearn.datasets import load_digits
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-import numpy as np 
+import numpy as np
 import matplotlib.pyplot as plt
 
 # 1. 데이터셋 로딩 및 분할
@@ -19,11 +19,25 @@ scaler = StandardScaler()
 X_train_std = scaler.fit_transform(X_train)
 X_test_std = scaler.transform(X_test)
 
+np.set_printoptions(suppress=True)
 
 num_features = X_train_std.shape[1]
 num_samples = X_train_std.shape[0]
 num_classes = 10
 
-w = np.random.randn(num_features,num_classes)
+W = np.random.randn(num_features, num_classes)
+b = np.zeros(num_classes) # 10,
 
-print(w.shape)
+logit = X_train_std @ W # 1437, 10
+logit_max = np.max(logit, axis=1, keepdims=True)
+logit -= logit_max
+exp_logit = np.exp(logit)
+exp_logit_sum = np.sum(exp_logit, axis=1, keepdims=True) # 1437, 1
+softmax = exp_logit / exp_logit_sum
+
+i_matix = np.eye(num_classes)
+one_hot = i_matix[y_train]
+
+print(y_train[0])
+print(one_hot[0])
+# print(i
